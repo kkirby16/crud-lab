@@ -3,7 +3,7 @@ import uuid from "uuid";
 export const addRestaurant = (restaurant) => {
   return {
     type: "ADD_RESTAURANT",
-    restaurant: restaurant,
+    text: restaurant,
   };
 };
 

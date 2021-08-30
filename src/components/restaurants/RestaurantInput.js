@@ -14,9 +14,8 @@ class RestaurantInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const restaurant = { ...this.state, id: cuid() };
-    console.log(restaurant);
-    this.props.addRestaurant(restaurant);
+    console.log(this.state.text);
+    this.props.addRestaurant(this.state.text);
     this.setState({
       text: "",
     });
@@ -30,6 +29,7 @@ class RestaurantInput extends Component {
           <input
             name="name"
             type="text"
+            id="text"
             value={this.state.text}
             onChange={this.handleChange}
           />

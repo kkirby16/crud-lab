@@ -3,7 +3,10 @@ import Restaurant from "./Restaurant";
 
 class Restaurants extends Component {
   componentDidMount() {
-    console.log(this.props);
+    console.log(
+      "restaurants from restaurants container:",
+      this.props.restaurants
+    );
   }
 
   renderRestaurants = () => {

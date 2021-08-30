@@ -22,7 +22,7 @@ const mapStateToProps = (state) => {
   console.log("mapStateToProps:", state);
 
   return {
-    restaurants: state.manageRestaurant,
+    restaurants: state.restaurants,
   };
 };
 

@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import ReviewsContainer from "../../containers/ReviewsContainer";
 
 class Restaurant extends Component {
+  componentDidMount() {
+    console.log("individual_restaurant:", this.props.restaurant);
+  }
+
   render() {
     const { restaurant } = this.props;
 
