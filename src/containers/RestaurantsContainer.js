@@ -6,6 +6,7 @@ import { addRestaurant, deleteRestaurant } from "../actions/restaurants.js";
 
 class RestaurantsContainer extends Component {
   render() {
+    console.log("restaurants from state:", this.props.restaurants);
     return (
       <div>
         <RestaurantInput addRestaurant={this.props.addRestaurant} />

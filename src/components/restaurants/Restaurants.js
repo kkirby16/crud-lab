@@ -3,24 +3,23 @@ import Restaurant from "./Restaurant";
 
 class Restaurants extends Component {
   componentDidMount() {
-    console.log(
-      "restaurants from restaurants container:",
-      this.props.restaurants
-    );
+    console.log("restaurants new test:", this.props.restaurants);
   }
 
   renderRestaurants = () => {
-    this.props.restaurants.map((restaurant) => {
-      <Restaurant
-        key={restaurant.id}
-        restaurant={restaurant}
-        deleteRestaurant={this.props.deleteRestaurant}
-      />;
+    return this.props.restaurants.map((restaurant) => {
+      return (
+        <Restaurant
+          key={restaurant.id}
+          restaurant={restaurant}
+          deleteRestaurant={this.props.deleteRestaurant}
+        />
+      );
     });
   };
 
   render() {
-    return <ul>{this.renderRestaurants}</ul>;
+    return <ul>{this.renderRestaurants()}</ul>;
   }
 }
 

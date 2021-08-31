@@ -17,6 +17,17 @@ export default function manageRestaurant(
         restaurants: [...state.restaurants, restaurant],
       };
 
+    case "DELETE_RESTAURANT":
+      return {
+        ...state,
+        restaurants: state.restaurants.filter(
+          (restaurant) => restaurant.id !== action.restaurantId
+        ),
+      };
+
+    case "ADD_REVIEW":
+      return { ...state, reviews: [...state.reviews, action.review] };
+
     default:
       return state;
   }
