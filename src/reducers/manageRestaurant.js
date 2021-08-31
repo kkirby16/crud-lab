@@ -26,7 +26,16 @@ export default function manageRestaurant(
       };
 
     case "ADD_REVIEW":
+      console.log(action);
       return { ...state, reviews: [...state.reviews, action.review] };
+
+    case "DELETE_REVIEW":
+      return {
+        ...state,
+        reviews: state.reviews.filter((review) => {
+          review.id !== action.reviewId;
+        }),
+      };
 
     default:
       return state;
