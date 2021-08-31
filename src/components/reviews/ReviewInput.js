@@ -22,7 +22,6 @@ class ReviewInput extends Component {
     const review = {
       text: this.state.text,
       restaurantId: this.props.restaurantId,
-      // id: cuid(),
     };
     this.props.addReview(review);
     this.setState({

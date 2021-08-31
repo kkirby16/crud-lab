@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import Review from "./Review";
 
 class Reviews extends Component {
-
-  const matchingReviews = this.props.reviews.filter((review => { 
-    review.restaurantId == this.props.restaurantId
-  })
-
   renderReviews = () => {
+    const matchingReviews = this.props.reviews.filter((review) => {
+      return review.restaurantId == this.props.restaurantId;
+    });
+
     return matchingReviews.map((review) => {
       return (
         <Review
@@ -15,10 +14,11 @@ class Reviews extends Component {
           review={review}
           deleteReview={this.props.deleteReview}
         />
-      )})}
+      );
+    });
+  };
 
   render() {
-
     return <ul>{this.renderReviews()}</ul>;
   }
 }
